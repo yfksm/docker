@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+    web:
+        build: ./almalinux
+        platform: linux/amd64
+        image: yfksm/almalinux
+        container_name: web
+        hostname: web
+        command: /sbin/init
+        volumes:
+            - /sys/fs/cgroup:/sys/fs/cgroup:ro
+        privileged: true
+
