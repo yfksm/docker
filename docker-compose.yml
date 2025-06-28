@@ -12,7 +12,8 @@ services:
             - /sys/fs/cgroup:/sys/fs/cgroup:ro
         privileged: true
     elasticsearch:
-        image: docker.elastic.co/elasticsearch/elasticsearch:8.0.0
+        build: ./elasticsearch
+        image: yfksm/elasticsearch
         ports:
           - 9200:9200
         environment:
